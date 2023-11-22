@@ -8,6 +8,8 @@
         <!-- CSS Files -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
+        <link rel="stylesheet" type="text/css" href="/css/index.css" />
 
         <!-- JS Files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,6 +19,16 @@
         <title>Raspository</title>
     </head>
     <body>
-        <h1>Homepage / Index</h1>
+        <%- include('../components/navbar'); %>
+        <div class="container" id="sysInfoList">
+            <div class="row">
+                <div class="col-sm listheader">Time</div>
+                <div class="col-sm listheader">Temperature</div>
+                <div class="col-sm listheader">Load last 1 min.</div>
+                <div class="col-sm listheader">Load last 5 min.</div>
+                <div class="col-sm listheader">Load last 15 min.</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/scripts/indexScript.js"></script>
     </body>
 </html>

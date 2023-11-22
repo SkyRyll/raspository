@@ -1,0 +1,16 @@
+.container {
+    margin-top: 5px;
+}
+
+.listheader {
+    font-size: 24px;
+    text-align: left;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}
+
+.listentry {
+    text-align: left;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}

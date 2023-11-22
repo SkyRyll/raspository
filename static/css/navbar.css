@@ -1,0 +1,23 @@
+.sgNavbar {
+    background-color: #383c44;
+    color: #ffffff;
+}
+
+.sgNavbar a:hover {
+    background-color: #49525a;
+    color: #ffffff;
+    transition: 0.15s ease-in-out;
+}
+
+.sgNavbar a {
+    padding: 0.7rem;
+}
+
+.navbar {
+    padding: 0;
+    margin-bottom: 2px;
+}
+
+.navbar-nav {
+    font-size: x-large;
+}

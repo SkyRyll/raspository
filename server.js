@@ -7,7 +7,7 @@ const mysql = require("mysql2");
 const dbHost = "localhost";
 const dbUser = "root";
 const dbPass = "root";
-const dbDatabase = "tdbi";
+const dbDatabase = "systeminfo";
 const dbPort = 3306;
 const nodeAppPort = 3000;
 
@@ -58,3 +58,15 @@ function get_index(req, res) {
         loggedin: req.session.loggedin,
     });
 }
+
+app.get("/getSystemInfo", (req, res) => {
+    const query = "SELECT * FROM systemvalues ORDER BY date ASC";
+    connection.query(query, (err, result) => {
+        if (err) {
+            console.error("Database query error: " + err.message);
+            res.status(500).json({ error: "Internal Server Error" });
+        } else {
+            res.json(result);
+        }
+    });
+});
