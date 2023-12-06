@@ -11,4 +11,10 @@ CREATE TABLE IF NOT EXISTS systemvalues(
     PRIMARY KEY (date)
 );
 
-# INSERT INTO systemvalues (date, temp, avgload1, avgload5, avgload15) values("2019-01-01 00:00:00", 0, 0, 0, 0);
+DROP TABLE IF EXISTS tickets;
+CREATE TABLE IF NOT EXISTS tickets(
+    id INT NOT NULL AUTO_INCREMENT,
+    errorName varchar(50),
+    description varchar(512),
+    PRIMARY KEY (id)
+);
