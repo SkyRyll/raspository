@@ -8,7 +8,6 @@ const dbHost = "localhost";
 const dbUser = "skyryll";
 const dbPass = "SkyDbAccess";
 const dbDatabase = "systeminfo";
-const dbPort = 3306;
 const nodeAppPort = 3000;
 
 // expose static path
@@ -59,6 +58,16 @@ function get_index(req, res) {
     });
 }
 
+app.get("/ticketform", (req, res) => {
+    get_ticketform(req, res);
+});
+
+function get_ticketform(req, res) {
+    res.render("pages/ticketform", {
+        loggedin: req.session.loggedin,
+    });
+}
+
 app.get("/getSystemInfo", (req, res) => {
     const query = "SELECT * FROM systemvalues ORDER BY date ASC";
     connection.query(query, (err, result) => {
@@ -68,5 +77,16 @@ app.get("/getSystemInfo", (req, res) => {
         } else {
             res.json(result);
         }
+    });
+});
+
+app.post("/ticketform", function (req, res) {
+    var errorName = req.body.errorName;
+    var description = req.body.description;
+    const query = "INSERT INTO tickets (errorName, description) VALUES (?,?)";
+    connection.query(query, [errorName, description], function (err, result) {
+        if (err) throw err;
+        res.status(200);
+        alert("Successfully saved to database");
     });
 });
