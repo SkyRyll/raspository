@@ -5,8 +5,8 @@ const mysql = require("mysql2");
 
 //VARIABLES
 const dbHost = "localhost";
-const dbUser = "root";
-const dbPass = "root";
+const dbUser = "skyryll";
+const dbPass = "SkyDbAccess";
 const dbDatabase = "systeminfo";
 const dbPort = 3306;
 const nodeAppPort = 3000;
